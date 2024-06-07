@@ -76,7 +76,7 @@ def main():
     convert_to_pdf = st.checkbox("Convert to PDF")
     output_zip_name = st.selectbox(
         "Select the name for the output ZIP file",
-        ["LOTE 01 EPI", "LOTE 01 FERRAMENTAS", "LOTE 03 EPI", "LOTE 03 FERRAMENTAS", "LOTE 05 EPI", "LOTE 05 FERRAMENTAS", "LOTE 08 EPI", "LOTE 08 FERRAMENTAS", "BOTA FORA", "FERRAMENTA GERAL", "EPI GERAL"]
+        ["LOTE 01 EPI", "LOTE 01 FERRAMENTAS", "LOTE 03 EPI", "LOTE 03 FERRAMENTAS", "LOTE 05 EPI", "LOTE 05 FERRAMENTAS", "LOTE 08 EPI", "LOTE 08 FERRAMENTAS","BOTA FORA EPI", "BOTA FORA FERRAMENTAS", "GERAL FERRAMENTAS", "GERAL EPI","GENEBRA EPI", "GENEBRA FERRAMENTAS"]
     )
 
     # Estado da página para rastrear se o botão de download foi clicado
