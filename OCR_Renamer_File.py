@@ -28,7 +28,7 @@ def extract_year_from_text(text):
 def categorize_file(text):
     if re.search(r'\b(EPI|UNIFORMES)\b', text, re.IGNORECASE):
         return 'EPI'
-    return 'Ferramentas'
+    return 'FERRAMENTA'
 
 # Função para renomear os arquivos e retornar um dicionário com os novos nomes, anos e categorias
 def rename_files_and_get_names(directory, progress_bar, progress_text):
@@ -67,7 +67,7 @@ def rename_files_and_get_names(directory, progress_bar, progress_text):
             
             if ano:
                 if ano not in arquivos_por_ano_e_categoria:
-                    arquivos_por_ano_e_categoria[ano] = {'EPI': [], 'Ferramentas': []}
+                    arquivos_por_ano_e_categoria[ano] = {'EPI': [], 'FERRAMENTA': []}
                 arquivos_por_ano_e_categoria[ano][categoria].append(novo_nome_arquivo)
 
         # Atualizar barra de progresso
