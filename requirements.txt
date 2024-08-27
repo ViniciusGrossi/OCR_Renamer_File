@@ -1,5 +1,5 @@
 opencv-python-headless
-pytesseract
+tesserocr
 streamlit
 reportlab
 Pillow
