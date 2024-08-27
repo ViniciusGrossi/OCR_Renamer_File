@@ -1,6 +1,6 @@
 import os
 import cv2
-from tesserocr import PyTessBaseAPI
+import pytesseract
 import re
 import streamlit as st
 import tempfile
@@ -9,10 +9,10 @@ from reportlab.pdfgen import canvas
 from PIL import Image
 from datetime import datetime
 
-def ocr_image(image):
-    with PyTessBaseAPI(lang='por') as api:
-        api.SetImage(image)
-        return api.GetUTF8Text()
+# Configurar o caminho do Tesseract OCR
+caminho_tesseract = r"C:\Users\User\AppData\Local\Programs\Tesseract-OCR"
+pytesseract.pytesseract.tesseract_cmd = os.path.join(caminho_tesseract, 'tesseract.exe')
+
 # Função para extrair o ano da data do texto
 def extract_year_from_text(text):
     padrao_data = re.compile(r'\b\d{2}/\d{2}/\d{4}\b')
@@ -35,7 +35,7 @@ def rename_files_and_get_names(directory, progress_bar, progress_text):
     for i, nome_arquivo in enumerate(arquivos):
         caminho_imagem_original = os.path.join(directory, nome_arquivo)
         imagem_original = cv2.imread(caminho_imagem_original)
-        texto_completo = ocr_image(imagem_original)
+        texto_completo = pytesseract.image_to_string(imagem_original, lang="por")
 
         nomes_encontrados = padrao_nome.findall(texto_completo)
         ano = extract_year_from_text(texto_completo)
