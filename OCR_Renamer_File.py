@@ -80,7 +80,7 @@ def main():
     convert_to_pdf = st.checkbox("Convert to PDF")
     output_zip_name = st.selectbox(
         "Select the name for the output ZIP file",
-        ["LOTE 01", "LOTE 03", "LOTE 05", "LOTE 08", "BOTA FORA", "GERAL", "GENEBRA"]
+        ["LOTE 01", "LOTE 03", "LOTE 05", "LOTE 08", "BOTA FORA", "GERAL", "GENEBRA", "MAE"]
     )
 
     if st.button("Process Files") and uploaded_files:
