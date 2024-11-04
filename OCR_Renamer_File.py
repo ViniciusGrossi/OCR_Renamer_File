@@ -19,7 +19,11 @@ def extract_year_from_text(text):
     datas_encontradas = padrao_data.findall(text)
     if datas_encontradas:
         data_extraida = datas_encontradas[0]
-        return datetime.strptime(data_extraida, "%d/%m/%Y").year
+        try:
+            return datetime.strptime(data_extraida, "%d/%m/%Y").year
+        except ValueError:
+            # If the date is incorrect, skip it and return None
+            return None
     return None
 
 # Função para renomear os arquivos e retornar um dicionário com os novos nomes e anos
