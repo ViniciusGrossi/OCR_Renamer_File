@@ -1,5 +1,3 @@
-opencv-python-headless
-tesserocr
 streamlit
-reportlab
-Pillow
+pandas
+plotly
